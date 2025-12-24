@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${sadanaSquare.variable} ${outfit.variable} antialiased font-sans bg-background text-foreground`}>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1809015452020498"
-          crossorigin="anonymous"></script>
+          crossOrigin="anonymous"></script>
         <CartProvider>
           {children}
         </CartProvider>
