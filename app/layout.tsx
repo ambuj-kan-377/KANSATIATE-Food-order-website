@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "./context/CartContext";
+import Script from "next/script";
 
 const sadanaSquare = localFont({
   src: "../public/fonts/SadanaSquare.ttf",
@@ -28,6 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sadanaSquare.variable} ${outfit.variable} antialiased font-sans bg-background text-foreground`}>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1809015452020498"
+          crossorigin="anonymous"></script>
         <CartProvider>
           {children}
         </CartProvider>
