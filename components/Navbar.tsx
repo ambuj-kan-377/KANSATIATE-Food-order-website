@@ -19,12 +19,12 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 h-20 shadow-sm transition-all duration-300">
+            <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 h-16 md:h-20 shadow-sm transition-all duration-300">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
 
                     {/* Logo & Brand */}
-                    <Link href="/" className="flex items-center gap-4 group">
-                        <div className="relative h-20 w-20 transition-transform group-hover:scale-105">
+                    <Link href="/" className="flex items-center gap-2 md:gap-4 group">
+                        <div className="relative h-12 w-12 md:h-20 md:w-20 transition-transform group-hover:scale-105">
                             <Image
                                 src="/assets/logo.png"
                                 alt="KANSATIATE"
@@ -34,7 +34,7 @@ export default function Navbar() {
                             />
                         </div>
                         <span
-                            className="text-5xl font-bold tracking-[0.15em] text-[#0F3F4C] transition-colors"
+                            className="text-2xl md:text-5xl font-bold tracking-[0.15em] text-[#0F3F4C] transition-colors"
                             style={{ fontFamily: 'var(--font-sadana-square)' }}
                         >
                             KANSATIATE

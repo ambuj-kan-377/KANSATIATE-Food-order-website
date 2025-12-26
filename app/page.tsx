@@ -62,14 +62,22 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col bg-white">
+    <main className="min-h-screen flex flex-col bg-white relative">
+      {/* Sign In Button - Top Right Absolute */}
+      <div className="absolute top-4 right-4 z-50">
+        <button className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-2.5 rounded-full bg-white/90 backdrop-blur-md text-[#0F3F4C] hover:bg-[#E63946] hover:text-white font-bold transition-all shadow-lg hover:shadow-xl active:scale-95 border border-white/20 text-sm md:text-base">
+          <User className="h-4 w-4 md:h-5 md:w-5" />
+          <span>Sign In</span>
+        </button>
+      </div>
+
       <div className="flex-1 flex flex-col lg:flex-row">
         {/* Left Side - Content (50%) */}
-        <div className="w-full lg:w-[50%] flex flex-col justify-center px-8 lg:px-12 py-12 lg:py-0 relative z-10">
+        <div className="w-full lg:w-[50%] flex flex-col justify-center px-4 md:px-8 lg:px-12 py-12 lg:py-0 relative z-10">
 
           {/* Brand Header - Centered & Larger */}
           <div className="flex flex-col items-center gap-0 mb-6 mx-auto">
-            <div className="relative h-48 w-48">
+            <div className="relative h-32 w-32 md:h-48 md:w-48">
               <Image
                 src="/assets/logo.png"
                 alt="KANSATIATE"
@@ -79,7 +87,7 @@ export default function Home() {
               />
             </div>
             <span
-              className="text-5xl uppercase tracking-[0.15em] -mt-10 font-bold"
+              className="text-3xl md:text-5xl uppercase tracking-[0.15em] -mt-6 md:-mt-10 font-bold text-center"
               style={{
                 fontFamily: 'var(--font-sadana-square)',
                 color: '#0F3F4C'
@@ -93,11 +101,11 @@ export default function Home() {
             {/* Logo/Brand for emphasis if needed, but Navbar has it.
                 We'll focus on the Heading as per reference. */}
 
-            <h1 className="text-4xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] text-[#0F3F4C]">
-              Authentic. Premium. <span className="text-[#E63946]">100% Vegetarian.</span>
+            <h1 className="text-3xl md:text-4xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.1] text-[#0F3F4C]">
+              Authentic. Premium. <br className="block lg:hidden" /> <span className="text-[#E63946]">100% Vegetarian.</span>
             </h1>
 
-            <p className="text-lg text-gray-500 font-medium leading-relaxed">
+            <p className="text-base md:text-lg text-gray-500 font-medium leading-relaxed">
               Savor the finest Indian delicacies, prepared with passion and delivered hot to your doorstep. Taste the difference of quality.
             </p>
 
@@ -110,13 +118,13 @@ export default function Home() {
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
                   placeholder="Enter your delivery location"
-                  className="w-full h-12 pl-12 pr-4 text-[#0F3F4C] font-medium focus:outline-none placeholder-gray-400 bg-transparent"
+                  className="w-full h-12 pl-12 pr-4 text-[#0F3F4C] font-medium focus:outline-none placeholder-gray-400 bg-transparent text-sm md:text-base"
                 />
 
                 <button
                   onClick={handleLocateMe}
                   disabled={loading}
-                  className="absolute right-2 px-3 py-1.5 text-sm font-bold text-gray-500 hover:text-[#E63946] transition-colors disabled:opacity-50 flex items-center gap-1 cursor-pointer"
+                  className="absolute right-2 px-3 py-1.5 text-xs md:text-sm font-bold text-gray-500 hover:text-[#E63946] transition-colors disabled:opacity-50 flex items-center gap-1 cursor-pointer"
                 >
                   {loading ? (
                     <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin" />
@@ -129,14 +137,14 @@ export default function Home() {
               </div>
               <Link
                 href="/menu"
-                className="h-12 px-5 bg-[#FF9933] hover:bg-[#e68a2e] text-white font-bold rounded-lg transition-all shadow-md active:scale-95 whitespace-nowrap text-lg flex items-center justify-center gap-2 cursor-pointer"
+                className="h-12 px-5 bg-[#FF9933] hover:bg-[#e68a2e] text-white font-bold rounded-lg transition-all shadow-md active:scale-95 whitespace-nowrap text-base md:text-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 Order Now <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
 
             {/* Trust Badges */}
-            <div className="pt-6 flex flex-wrap items-center gap-6 text-sm font-semibold text-gray-500">
+            <div className="pt-6 flex flex-wrap items-center gap-6 text-sm font-semibold text-gray-500 justify-center lg:justify-start">
               <div className="flex items-center gap-2">
                 <Flame className="w-5 h-5 text-[#E63946]" />
                 <span className="text-[#0F3F4C]">Hot & Fresh</span>
@@ -151,14 +159,6 @@ export default function Home() {
 
         {/* Right Side - Image Hero (55%) */}
         <div className="w-full lg:w-[55%] relative min-h-[50vh] lg:min-h-screen bg-gray-50">
-          {/* Sign In Button Overlay */}
-          <div className="absolute top-8 right-8 z-20">
-            <button className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/90 backdrop-blur-md text-[#0F3F4C] hover:bg-[#E63946] hover:text-white font-bold transition-all shadow-lg hover:shadow-xl active:scale-95 border border-white/20">
-              <User className="h-5 w-5" />
-              <span>Sign In</span>
-            </button>
-          </div>
-
           <Image
             src="/assets/thaal.png"
             alt="Delicious Thaal"
